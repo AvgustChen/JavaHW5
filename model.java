@@ -13,10 +13,10 @@ public class model {
 
     // визуализируем
     static int[][] arrayTriangular(int[][] array, int n) {
-        for (int f = 0; f < n;) {
+        for (int f = 1; f < n;) {
             for (int i = 0; i < array.length; i++) {
-                for (int j = 0; j <= f; j++) {
-                    array[i][j] = 1;
+                for (int j = 0; j < f; j++) {
+                    array[i][j] = f;
                 }
                 f++;
             }
@@ -28,8 +28,8 @@ public class model {
     static void printRow(int[][] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
-                if (arr[i][j] == 1) {
-                    System.out.printf((char) 27 + "[31mo" + (char) 27 + "[0m");
+                if (arr[i][j] > 0) {
+                    System.out.printf((char) 27 + "\033[1;93m" + "o" + (char) 27 + "[0m");
                 } else if (arr[i][j] == 0) {
                     System.out.print(" ");
                 }
